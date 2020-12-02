@@ -141,10 +141,7 @@ public class ContactOperations {
 		System.out.println("Enter User State : ");
 		String state = sc.nextLine();
 		sc.close();
-		for (Contact list : ContactList) {
-			if (list.getState().equals(state))
-				System.out.println(list.firstName);
-		}
+		ContactList.stream().filter(n -> n.getCity().equals(state)).forEach(n -> System.out.println(n.firstName));
 	}
 
 	public static void searchByCity() {
@@ -152,9 +149,6 @@ public class ContactOperations {
 		System.out.println("Enter User City : ");
 		String city = sc.nextLine();
 		sc.close();
-		for (Contact list : ContactList) {
-			if (list.getCity().equals(city))
-				System.out.println(list.firstName);
-		}
+		ContactList.stream().filter(n -> n.getCity().equals(city)).forEach(n -> System.out.println(n.firstName));
 	}
 }
