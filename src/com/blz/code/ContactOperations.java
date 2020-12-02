@@ -135,4 +135,26 @@ public class ContactOperations {
 			return true;
 		}
 	}
+
+	public static void searchByState() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter User State : ");
+		String state = sc.nextLine();
+		sc.close();
+		for (Contact list : ContactList) {
+			if (list.getState().equals(state))
+				System.out.println(list.firstName);
+		}
+	}
+
+	public static void searchByCity() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter User City : ");
+		String city = sc.nextLine();
+		sc.close();
+		for (Contact list : ContactList) {
+			if (list.getCity().equals(city))
+				System.out.println(list.firstName);
+		}
+	}
 }
